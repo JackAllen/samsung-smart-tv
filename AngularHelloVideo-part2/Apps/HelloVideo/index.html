@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="HelloVideo">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Hello Video</title>
+
+    <!--Style Sheet-->
+    <link rel="stylesheet" href="app/css/Main.css" type="text/css">
+
+    <!-- Smart TV Common API -->
+    <script type="text/javascript" language="javascript" src="$MANAGER_WIDGET/Common/API/Widget.js"></script>
+    <script type="text/javascript" language="javascript" src="$MANAGER_WIDGET/Common/API/TVKeyValue.js"></script>
+    <script type='text/javascript' language='javascript' src='$MANAGER_WIDGET/Common/API/Plugin.js'></script>
+    <script type='text/javascript' language='javascript' src='$MANAGER_WIDGET/Common/API/PluginTV.js'></script>
+    <!-- End - Smart TV Common API -->
+
+    <!--Core Library-->
+    <script type="text/javascript" language="javascript" src="app/js/libs/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="app/js/libs/angular.js"></script>
+    <!--End - Core Library-->
+
+    <!--Production App JS------------------------------------------------------------------------------------>
+    <!--App Core-->
+    <script type="text/javascript" src="app/js/Main.js"></script>
+    <script type="text/javascript" src="app/js/app.js"></script>
+    <!--End - App Core-->
+
+    <!--Production App JS-->
+    <script type="text/javascript" src="app/js/configuration/ConfigData.js"></script>
+    <script type="text/javascript" src="app/js/controllers/controllers.js"></script>
+    <script type="text/javascript" src="app/js/directives/directives.js"></script>
+    <script type="text/javascript" src="app/js/services/services.js"></script>
+    <script type="text/javascript" src="app/js/utils/Utils.js"></script>
+    <!--End - Production App JS------------------------------------------------------------------------------------>
+
+</head>
+
+<body id="AppBody" ng-controller="MainController"
+      onload="Main.onLoad();" onunload="Main.onUnload();">
+<!--Other Scripts that needs to be loaded after all main script are loaded-->
+<object id="pluginObjectTV" border=0 classid="clsid:SAMSUNG-INFOLINK-TV"></object>
+<object id="pluginObjectWindow" border=0 classid="clsid:SAMSUNG-INFOLINK-WINDOW"></object>
+<object id="pluginObjectAppCommon" border=0 classid="clsid:SAMSUNG-INFOLINK-APPCOMMON"></object>
+
+<a href="javascript:void(0);" id="anchor_main" onkeydown="Main.keyDown();"></a>
+
+<!--#applicationWrapper should be kept as it acts as main container that actually contain what actually belong to the app-->
+<div id="applicationWrapper"  ng-controller="MyMovieListCtrl">
+    <div id="movieListWrapper">
+        <ul id="movieList" scrollable-list selected-index="{{selectedIndex}}" scroll-margin-bottom="30">
+            <li ng-repeat="item in collection"
+                ng-class="{highlight: $index==selectedIndex}">
+                <img ng-src="{{item.imageUrl}}"/>
+                <p>{{item.name}}</p>
+            </li>
+        </ul>
+    </div>
+    <div id="detailsWrapper">
+        <h4>{{selectedItem.name}}</h4>
+        <p>{{selectedItem.synopsis}}</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="HelloVideo">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Hello Video</title>
+    <style>
+        html{
+            background-color: #000;
+        }
+    </style>
+
+    <!--Style Sheet-->
+    <link rel="stylesheet" href="app/css/Main.css" type="text/css">
+
+    <!--Core Library-->
+    <script type="text/javascript" language="javascript" src="app/js/libs/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="app/js/libs/angular.js"></script>
+    <!--End - Core Library-->
+
+    <!--Production App JS------------------------------------------------------------------------------------>
+    <!--App Core-->
+    <script type="text/javascript" src="app/js/app.js"></script>
+
+    <!--Browser Handler JS------------------------------------------------------------------------------------>
+    <script type="text/javascript" src="../../test/developmentJs/TVKeyCode.js"></script>
+    <script type="text/javascript" src="../../test/developmentJs/Main.js"></script>
+    <!--End - App Core-->
+
+    <!--Production App JS-->
+    <script type="text/javascript" src="app/js/configuration/ConfigData.js"></script>
+    <script type="text/javascript" src="app/js/controllers/controllers.js"></script>
+    <script type="text/javascript" src="app/js/directives/directives.js"></script>
+    <script type="text/javascript" src="app/js/services/services.js"></script>
+    <script type="text/javascript" src="app/js/utils/Utils.js"></script>
+    <!--End - Production App JS------------------------------------------------------------------------------------>
+</head>
+<body id="AppBody" ng-controller="MainController"
+      onload="Main.onLoad();" onunload="Main.onUnload();">
+    <!--#applicationWrapper should be kept as it acts as main container that actually contain what actually belong to the app-->
+    <div id="applicationWrapper"  ng-controller="MyMovieListCtrl">
+        <div id="movieListWrapper">
+           <ul id="movieList" scrollable-list selected-index="{{selectedIndex}}" scroll-margin-bottom="30">
+               <li ng-repeat="item in collection"
+                   ng-class="{highlight: $index==selectedIndex}">
+                   <img ng-src="{{item.imageUrl}}"/>
+                   <p>{{item.name}}</p>
+               </li>
+           </ul>
+        </div>
+        <div id="detailsWrapper">
+            <h4>{{selectedItem.name}}</h4>
+            <p>{{selectedItem.synopsis}}</p>
+        </div>
+    </div>
+</body>
+</html>
