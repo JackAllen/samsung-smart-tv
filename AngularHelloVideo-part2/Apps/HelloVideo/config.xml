@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.samsung.com/">
+	<runTitle>Hello Video</runTitle>
+	<cpname itemtype="string">Hello Video</cpname>
+	<cplogo itemtype="string"/>
+	<cpauthjs itemtype="string"/>
+	<ThumbIcon itemtype="string">icon/logo_106x87.png</ThumbIcon>
+    <BigThumbIcon itemtype="string">icon/logo_115x95.png</BigThumbIcon>
+    <ListIcon itemtype="string">icon/logo_85x70.png</ListIcon>
+    <BigListIcon itemtype="string">icon/logo_95x78.png</BigListIcon>
+	<category itemtype="string">Videos</category>
+	<autoUpdate itemtype="boolean">y</autoUpdate>
+	<ver itemtype="string">1.000</ver>
+	<mgrver itemtype="string"/>
+	<fullwidget itemtype="boolean">y</fullwidget>
+	<type itemtype="string">user</type>
+	<srcctl itemtype="boolean">y</srcctl>
+	<ticker itemtype="boolean">n</ticker>
+	<childlock itemtype="boolean">n</childlock>
+	<videomute itemtype="boolean">n</videomute>
+	<dcont itemtype="boolean">y</dcont>
+	<widgetname itemtype="string">Hello Video</widgetname>
+	<description itemtype="string"/>
+	<width itemtype="string">960</width>
+	<height itemtype="string">540</height>
+	<author itemtype="group"> 
+		<name itemtype="string">Jack Vo</name>
+        <email itemtype="string"></email>
+        <link itemtype="string"></link>
+		<organization itemtype="string">Jack Vo</organization>
+	</author>
+</widget>

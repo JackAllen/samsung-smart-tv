@@ -1,0 +1,7 @@
+.DS_Store
+.idea/
+vendor/
+Logs/
+node_modules/
+public/bundle.js
+*.map
